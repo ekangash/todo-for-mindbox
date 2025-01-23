@@ -1,13 +1,13 @@
 /** 1 Node - Modules, Components, Hooks, Icons */
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
 
 /** 2 App - Components, Hooks */
 import {AppExceptionHandler} from "@/components/app/exception/AppExceptionHandler";
 
 /** 3 Entities, Stores, Packages, Enums ... */
-import { cn } from "@/packages/utils"
+import { cn } from "@/packages/utils";
 
 const buttonVariants = cva(
     `flex items-center cursor-pointer justify-center transition-all cursor-pointer 
@@ -15,7 +15,7 @@ const buttonVariants = cva(
     {
         variants: {
             variant: {
-                primary: "text-black shadow bg-pink-500 text-white hover:bg-pink-500/90",
+                primary: "text-black shadow bg-primary text-white hover:bg-primary/90",
                 destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
                 outline: "border border-input border-gray-200 hover:border-gray-100 bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
                 secondary: "bg-secondary hover:bg-secondary-hoverable text-accent-foreground",

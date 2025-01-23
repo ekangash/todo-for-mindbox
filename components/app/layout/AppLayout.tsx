@@ -19,11 +19,12 @@ export const AppLayout: React.FC<AppLayoutLayoutProps> = ({ children }) => {
   return (
       <>
           <div id="scroll-to-top" />
-          <AppLayoutHeader className="p-4 mx-auto max-w-7xl sticky top-0 z-10 bg-card" />
-          <main id="home" className="mx-auto max-w-7xl px-4">
-              {children}
+          <main className="h-screen flex flex-col justify-between">
+              <AppLayoutHeader className="p-4 mx-auto max-w-7xl sticky top-0 z-10 bg-card w-full" />
+              <div id="home" className="mx-auto max-w-7xl w-full px-4 flex-1">
+                  {children}
+              </div>
           </main>
-          <AppLayoutFooter className="p-4 mx-auto max-w-7xl" />
       </>
   );
 }

@@ -4,7 +4,7 @@
         "module": "ESNext",
         "lib": ["ES2020", "DOM", "DOM.Iterable"],
         "jsx": "react-jsx",
-        "skipLibCheck": true,
+        "skipLibCheck": false,
 
         /* Bundler mode */
         "moduleResolution": "node",
@@ -18,15 +18,15 @@
         "noUnusedLocals": true,
         "noUnusedParameters": false,
         "noFallthroughCasesInSwitch": true,
-        "noUncheckedSideEffectImports": true,
+        "noUncheckedSideEffectImports": false,
         "allowSyntheticDefaultImports": true,
         "useDefineForClassFields": true,
+
         /* Path */
         "baseUrl": ".",
         "paths": {
             "@/*": ["./*"]
-        },
-        "rootDir": ".",
+        }
     },
     "include": [
         "packages/*.ts",
@@ -36,6 +36,8 @@
         "hooks/*.ts",
         "hooks/*.tsx",
         "main.tsx",
+        "node_modules/@types/node/globals.d.ts",
+        "node_modules/react-hook-form/dist/types/form.d.ts"
     ],
     "exclude": [
         "node_modules",

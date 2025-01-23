@@ -20,6 +20,7 @@ export const spinnerVariants = cva(
       color: {
           white: 'text-white',
           green: 'text-green-400',
+          red: 'text-red-400',
           black: 'text-foreground',
           muted: 'text-muted-foreground',
           minor: 'text-minor',

@@ -7,9 +7,7 @@ export default defineConfig({
   plugins: [react()],
   base: "./",
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./"),
-    }
+    alias: [{ find: "@", replacement: path.resolve(__dirname, "./") }],
   },
   server: {
     watch: {
@@ -17,6 +15,6 @@ export default defineConfig({
     },
     host: true, // needed for the Docker Container port mapping to work
     strictPort: true, // not necessary
-    port: 5173
+    port: 5174
   }
 })

@@ -11,6 +11,7 @@ import {ObjectSchema} from "yup";
 import {AppExceptionHandler} from "@/components/app/exception/AppExceptionHandler";
 import {FormCheckbox, FormCheckboxProps} from "@/components/shared/form/checkbox/FormCheckbox";
 import {FormText, FormTextProps} from "@/components/shared/form/text/FormText";
+import {FormTitle, FormTitleProps} from "@/components/shared/form/title/FormTitle";
 import {FormProvider as FormInnerProvider} from "@/components/shared/form/context/FormContext";
 
 /** 3 Entities, Stores, Packages, Enums ... */
@@ -47,8 +48,9 @@ interface FormProps {
  * @interface FormComponent
  */
 interface FormComponent extends React.FC<FormProps> {
-    Checkbox: React.FC<FormCheckboxProps>;
-    Text: React.FC<FormTextProps>;
+    Checkbox?: React.FC<FormCheckboxProps>;
+    Text?: React.FC<FormTextProps>;
+    Title?: React.FC<FormTitleProps>;
 }
 
 /**
@@ -116,5 +118,5 @@ Form.Checkbox.displayName = 'FormCheckbox';
 Form.Text = FormText;
 Form.Text.displayName = 'FormText';
 
-
-/** @todo Определить то как удалить зарегистрированное изображение или файла из контекста состояние формы тех данных которые не актуальные например, когда при создание мы добавили фото, а следом удалили, в таком порядке сервер захочет удалить данное изображение, т.е тем самым выполнит бес мысленное действие */
+Form.Title = FormTitle;
+Form.Title.displayName = 'FormTitle';
