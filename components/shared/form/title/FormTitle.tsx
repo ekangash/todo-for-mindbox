@@ -9,7 +9,7 @@ import {FormLabel} from "@/components/shared/form/label/FormLabel";
 import {useFormContext as useFormOtherContext} from "@/components/shared/form/context/FormContext";
 
 /** 3 Entities, Stores, Packages, Enums ... */
-import {obj, str} from "@/packages/support";
+import {obj, str} from "data-support";
 
 /**
  * @interface FormTitleProps
@@ -49,7 +49,7 @@ export const FormTitle: React.FC<FormTitleProps> = ({
             <TextareaAutosize
                 {...register(name, { disabled: disabled.includes(name) })}
                 {...(withPlaceholder && { placeholder })}
-                className="text-3xl bg-transparent placeholder:text-minor overflow-hidden font-bold break-words outline-none text-white resize-none w-full"
+                className="text-3xl bg-transparent placeholder:text-minor overflow-hidden font-bold break-words outline-none text-background-foreground resize-none w-full"
             />
             {str.contains(help) && (
                 <p className="mt-1 text-xs text-gray-400">{help}</p>

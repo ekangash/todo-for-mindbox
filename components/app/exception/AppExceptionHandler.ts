@@ -4,7 +4,7 @@ import {toast} from "sonner";
 
 /** 2 App - Components, Hooks */
 /** 3 Entities, Stores, Packages, Enums ... */
-import {inst} from "@/packages/support";
+import {inst} from "data-support";
 import {REQUEST_STATUSES} from "@/enums/request/statuses";
 import {REQUEST_MESSAGES} from "@/enums/request/messages";
 

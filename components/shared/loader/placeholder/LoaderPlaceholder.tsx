@@ -4,7 +4,7 @@ import {cn} from "@/packages/utils";
 
 /** 2 App - Components, Hooks */
 /** 3 Entities, Stores, Packages, Enums ... */
-import {str} from "@/packages/support";
+import {str} from "data-support";
 
 /**
  * @interface PlaceholderProps

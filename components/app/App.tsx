@@ -5,7 +5,7 @@ import React from 'react';
 import {AppLayout} from "@/components/app/layout/AppLayout";
 import {AppToaster} from "@/components/app/toaster/AppToaster";
 import {ThemeProvider} from "@/components/app/theme/provider/AppThemeProvider";
-import {ToDo} from "@/components/entities/to-do/ToDo";
+import {Tasks} from "@/components/entities/tasks/Tasks";
 import {Caption} from "@/components/shared/caption/Caption";
 
 /** 3 Entities, Stores, Packages, Enums ... */
@@ -27,7 +27,7 @@ export const App: React.FC = (): React.ReactElement => {
                     >
                         Список задач
                     </Caption>
-                    <ToDo />
+                    <Tasks />
                 </section>
                 <AppToaster />
             </AppLayout>

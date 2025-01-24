@@ -9,7 +9,7 @@ import {AppExceptionHandler} from "@/components/app/exception/AppExceptionHandle
 import {Icon} from "@/components/shared/icon/Icon";
 
 /** 3 Entities, Stores, Packages, Enums ... */
-import {func} from "@/packages/support/func";
+import {func} from "data-support";
 import {ACTION_MESSAGES} from "@/enums/action/messages";
 
 /**

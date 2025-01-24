@@ -1,7 +1,7 @@
 /** 1 Node - Modules, Components, Hooks, Icons */
 /** 2 App - Components, Hooks */
 /** 3 Entities, Stores, Packages, Enums ... */
-import {arr, obj} from "@/packages/support";
+import {arr, obj} from "data-support";
 import {ObjectSchema, SchemaDescription} from "yup";
 
 /**

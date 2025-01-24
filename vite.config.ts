@@ -9,6 +9,9 @@ export default defineConfig({
   resolve: {
     alias: [{ find: "@", replacement: path.resolve(__dirname, "./") }],
   },
+  test: {
+    watch: false
+  },
   server: {
     watch: {
       usePolling: true,

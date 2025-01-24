@@ -4,7 +4,7 @@
         "module": "ESNext",
         "lib": ["ES2020", "DOM", "DOM.Iterable"],
         "jsx": "react-jsx",
-        "skipLibCheck": false,
+        "skipLibCheck": true,
 
         /* Bundler mode */
         "moduleResolution": "node",
@@ -36,6 +36,7 @@
         "hooks/*.ts",
         "hooks/*.tsx",
         "main.tsx",
+        "types/**.d.ts",
         "node_modules/@types/node/globals.d.ts",
         "node_modules/react-hook-form/dist/types/form.d.ts"
     ],

@@ -5,7 +5,7 @@ import {Clipboard, ClipboardCheck, ClipboardList} from "lucide-react";
 /** 2 App - Components, Hooks */
 import {Button} from "@/components/shared/button/Button";
 import {Icon} from "@/components/shared/icon/Icon";
-import {ToDoStore} from "@/components/entities/to-do/ToDoStore";
+import {TasksStore} from "@/components/entities/tasks/TasksStore";
 
 /** 3 Entities, Stores, Packages, Enums ... */
 import {TaskStatus} from "@/types/task.d";
@@ -14,14 +14,14 @@ import {observer} from "mobx-react-lite";
 /**
  * @return {React.ReactElement} Сформированный DOM узел.
  */
-export const ToDoTaskActions: React.FC = observer((): React.ReactElement => {
+export const TasksActions: React.FC = observer((): React.ReactElement => {
 
     return (
         <div className="sticy top-0 flex items-center justify-center space-x-1">
             <Button
-                variant={ToDoStore.visibleTasksStatus === undefined ? 'secondary' : "ghost"}
+                variant={TasksStore.visibleActiveStatus === undefined ? 'secondary' : "ghost"}
                 onClick={() => {
-                    ToDoStore.changeVisibleTasksStatus();
+                    TasksStore.changeVisibleActiveStatus();
                 }}
             >
                 <Icon
@@ -31,9 +31,9 @@ export const ToDoTaskActions: React.FC = observer((): React.ReactElement => {
                 Все
             </Button>
             <Button
-                variant={ToDoStore.visibleTasksStatus === TaskStatus.ACTIVE ? 'secondary' : "ghost"}
+                variant={TasksStore.visibleActiveStatus === TaskStatus.ACTIVE ? 'secondary' : "ghost"}
                 onClick={() => {
-                    ToDoStore.changeVisibleTasksStatus(TaskStatus.ACTIVE);
+                    TasksStore.changeVisibleActiveStatus(TaskStatus.ACTIVE);
                 }}
             >
                 <Icon
@@ -43,9 +43,9 @@ export const ToDoTaskActions: React.FC = observer((): React.ReactElement => {
                 Активные
             </Button>
             <Button
-                variant={ToDoStore.visibleTasksStatus === TaskStatus.COMPLETED ? 'secondary' : "ghost"}
+                variant={TasksStore.visibleActiveStatus === TaskStatus.COMPLETED ? 'secondary' : "ghost"}
                 onClick={() => {
-                    ToDoStore.changeVisibleTasksStatus(TaskStatus.COMPLETED);
+                    TasksStore.changeVisibleActiveStatus(TaskStatus.COMPLETED);
                 }}
             >
                 <Icon

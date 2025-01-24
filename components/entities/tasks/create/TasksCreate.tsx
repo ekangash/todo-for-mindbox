@@ -9,14 +9,14 @@ import {Form} from "@/components/shared/form/Form";
 
 /** 3 Entities, Stores, Packages, Enums ... */
 import {yup} from "@/packages/yup";
-import {obj} from "@/packages/support";
+import {obj} from "data-support";
 import {yupSupport} from "@/packages/yup/support";
-import {ToDoStore} from "@/components/entities/to-do/ToDoStore.ts";
+import {TasksStore} from "@/components/entities/tasks/TasksStore";
 
 /**
  * @return {React.ReactElement} Сформированный DOM узел.
  */
-export const ToDoTaskCreate: React.FC = (): React.ReactElement => {
+export const TasksCreate: React.FC = (): React.ReactElement => {
 
     /**
      * Обновляет персональные атрибуты профиля.
@@ -28,12 +28,12 @@ export const ToDoTaskCreate: React.FC = (): React.ReactElement => {
      */
     const pushTaskToList = (data: object, formMethods: UseFormReturn): void => {
         toast.promise(new Promise((resolve, reject) => {
-            ToDoStore.createActiveTask(obj.get(data, 'title'))
-                .sendTasksToLocalStorage();
+            TasksStore.createActiveTask(obj.get(data, 'title'))
+                .sendToLocalStorage();
             formMethods.reset()
 
             setTimeout(() => {
-                resolve();
+                resolve('');
             }, 500);
         }), {
             loading: 'Добавление задачи...',

@@ -3,7 +3,6 @@ import React from 'react';
 
 /** 2 App - Components, Hooks */
 import {AppLayoutHeader} from "@/components/app/layout/header/AppLayoutHeader";
-import {AppLayoutFooter} from "@/components/app/layout/footer/AppLayoutFooter";
 
 /** 3 Entities, Stores, Packages, Enums ... */
 

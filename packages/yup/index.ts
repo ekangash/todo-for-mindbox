@@ -3,7 +3,7 @@ import * as npmYup from "yup";
 
 /** 2 App - Components, Hooks */
 /** 3 Entities, Stores, Packages, Enums ... */
-import {str} from "@/packages/support";
+import {str} from "data-support";
 
 /**
  * Максимальное значение integer в postgres

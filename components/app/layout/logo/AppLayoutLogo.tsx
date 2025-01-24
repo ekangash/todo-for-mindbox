@@ -24,7 +24,7 @@ export const AppLayoutLogo: React.FC = (): React.ReactElement => {
             <p className="link-title text-xl mr-1">
                 ToDo
             </p>
-            <p className="text-md py-1 px-2 bg-pink-500 text-white rounded-md leading-none font-extrabold">
+            <p className="text-md py-1 px-2 bg-primary text-white rounded-md leading-none font-extrabold">
                 tasks
             </p>
         </Button>

@@ -16,7 +16,7 @@ import {FormProvider as FormInnerProvider} from "@/components/shared/form/contex
 
 /** 3 Entities, Stores, Packages, Enums ... */
 import {REQUEST_MESSAGES} from "@/enums/request/messages";
-import {obj} from "@/packages/support";
+import {obj} from "data-support";
 import {yup} from "@/packages/yup";
 import {yupSupport} from "@/packages/yup/support";
 import {useConst} from "@/hooks/useConst";

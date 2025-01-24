@@ -13,8 +13,6 @@ export interface TaskCardTitleProps {
 }
 
 /**
- * Карточка публикации.
- *
  * @return {React.ReactElement} Сформированный DOM узел.
 */
 export const TaskCardTitle: React.FC<TaskCardTitleProps> = ({
@@ -23,8 +21,8 @@ export const TaskCardTitle: React.FC<TaskCardTitleProps> = ({
 }): React.ReactElement => {
 
     return (
-        <p className={cn('text-sm font-bold link-title line-clamp-2', {
-            'text-underline': completed
+        <p className={cn('text-md font-normal link-title line-clamp-2', {
+            'line-through': completed
         })}>
             {children}
         </p>

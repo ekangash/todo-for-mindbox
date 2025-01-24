@@ -7,7 +7,7 @@ import {TaskCardActionsStatus, TaskCardActionsStatusProps} from "@/components/wi
 
 /** 3 Entities, Stores, Packages, Enums ... */
 import {cn} from "@/packages/utils";
-import {TaskCardTitle, TaskCardTitleProps} from "@/components/widgets/task/card/title/TaskCardTitle.tsx";
+import {TaskCardTitle, TaskCardTitleProps} from "@/components/widgets/task/card/title/TaskCardTitle";
 
 /**
  * @interface TaskCardProps

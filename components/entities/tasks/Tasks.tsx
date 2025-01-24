@@ -1,20 +1,19 @@
 /** 1 Node - Modules, Components, Hooks, Icons */
 import React, {useCallback} from "react";
-import {nanoid} from "nanoid";
 
 /** 2 App - Components, Hooks */
-import {ToDoTaskCreate} from "@/components/entities/to-do/task/create/ToDoTaskCreate";
-import {ToDoTaskList} from "@/components/entities/to-do/task/list/ToDoTaskList";
+import {TasksCreate} from "@/components/entities/tasks/create/TasksCreate";
+import {TasksGroup} from "@/components/entities/tasks/group/TasksGroup";
 import {Loader} from "@/components/shared/loader/Loader";
-import {ToDoStore} from "@/components/entities/to-do/ToDoStore.ts";
+import {TasksActions} from "@/components/entities/tasks/actions/TasksActions";
 
 /** 3 Entities, Stores, Packages, Enums ... */
-import {ToDoTaskActions} from "@/components/entities/to-do/task/actions/ToDoTaskActions";
+import {TasksStore} from "@/components/entities/tasks/TasksStore";
 
 /**
  * @return {React.ReactElement} Сформированный DOM узел.
  */
-export const ToDo: React.FC = (): React.ReactElement => {
+export const Tasks: React.FC = (): React.ReactElement => {
 
     /**
      * Инициализация загрузки задач
@@ -22,7 +21,7 @@ export const ToDo: React.FC = (): React.ReactElement => {
      * @return {Promise<void>}
      */
     const initLoadTasks = useCallback(() => {
-        ToDoStore.fetchTasksFromLocalStorage();
+        TasksStore.fetchFromLocalStorage();
 
         return new Promise((resolve): void => {
             setTimeout(resolve, 2500)
@@ -31,15 +30,15 @@ export const ToDo: React.FC = (): React.ReactElement => {
 
     return (
         <div className="flex w-full flex-col justify-center space-y-4 p-6 bg-window rounded-3xl border border-solid border-border">
-            <ToDoTaskCreate />
+            <TasksCreate />
             <div className="flex w-full flex-col justify-center space-y-4">
-                <ToDoTaskActions />
+                <TasksActions />
                 <Loader
                     expect={initLoadTasks}
                     filled
                 >
                     {() => (
-                        <ToDoTaskList />
+                        <TasksGroup />
                     )}
                 </Loader>
             </div>
