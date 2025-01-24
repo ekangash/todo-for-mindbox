@@ -6,7 +6,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  app-prod:
+  app-build-prod:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,12 +14,7 @@ jobs:
         run: cp .env.dist .env
       - name: Build the Docker image
         run: docker compose -f docker-compose.prod.yaml up -d --build
-
-      - name: Build resource data
-        run: npm install && npm run build
-      - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
-        run: docker compose exec -u root monday-app php artisan test
-  app-test:
+  app-test-dev:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
