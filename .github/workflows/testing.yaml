@@ -25,8 +25,8 @@ jobs:
       - name: Install Dependencies
         run: docker compose exec -u root dev-client npm install
       - name: Execute eslint scripts
-        run: docker compose exec dev-client npm run lint:scripts
+        run: docker compose exec -u root dev-client npm run lint:scripts
       - name: Execute eslint react components
-        run: docker compose exec dev-client npm run lint
+        run: docker compose exec -u root dev-client npm run lint
       - name: Execute tests (Unit tests) via vitest
-        run: docker compose exec dev-client npm run test
+        run: docker compose exec -u root dev-client npm run test
