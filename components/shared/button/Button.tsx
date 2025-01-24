@@ -110,8 +110,8 @@ const Button: React.ForwardRefExoticComponent<ButtonProps> = React.forwardRef<
     },
     ref
   ) => {
-    let hrefIsDefined = href.length > 0 && href;
-    let Comp = asChild ? Slot : hrefIsDefined ? asWrap : asWrap;
+    const hrefIsDefined = href.length > 0 && href;
+    const Comp = asChild ? Slot : hrefIsDefined ? asWrap : asWrap;
 
     /**
      * Промежуточное событие 'onClick' кнопки.
