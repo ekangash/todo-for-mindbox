@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Copy .env
-        run: cp .env.example .env
+        run: cp .env.dist .env
       - name: Build the Docker image
         run: docker compose -f docker-compose.prod.yaml up -d --build
 
@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Copy .env
-        run: cp .env.example .env
+        run: cp .env.dist .env
       - name: Build the Docker image
         run: docker-compose up -d --build
       - name: Install Dependencies
