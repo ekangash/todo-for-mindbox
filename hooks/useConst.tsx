@@ -11,13 +11,13 @@ import React from "react";
  * @return {array|object|string|number}
  */
 export function useConst<T = any>(initialValue: any, deps: any[] = []): T {
-    const refValue = React.useRef();
-    const refDeps = React.useRef<any[]>(deps);
+  const refValue = React.useRef();
+  const refDeps = React.useRef<any[]>(deps);
 
-    if (refValue.current === undefined || JSON.stringify(refDeps.current) !== JSON.stringify(deps)) {
-        refDeps.current = deps;
-        refValue.current = typeof initialValue === 'function' ? initialValue() : initialValue;
-    }
+  if (refValue.current === undefined || JSON.stringify(refDeps.current) !== JSON.stringify(deps)) {
+    refDeps.current = deps;
+    refValue.current = typeof initialValue === "function" ? initialValue() : initialValue;
+  }
 
-    return refValue.current as T;
+  return refValue.current as T;
 }

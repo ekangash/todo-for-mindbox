@@ -3,7 +3,7 @@ import * as npmYup from "yup";
 
 /** 2 App - Components, Hooks */
 /** 3 Entities, Stores, Packages, Enums ... */
-import {str} from "data-support";
+import { str } from "data-support";
 
 /**
  * Максимальное значение integer в postgres
@@ -28,15 +28,15 @@ const MIN_NUMBER_SQL_LIMIT: number = -2147483648;
  * @return {string} Непустая строка или null, если в поле ничего не введено
  */
 function transformSchemaToAllowEmptyString(value, originalValue) {
-    if (this.isType(value)) {
-        return value;
-    }
+  if (this.isType(value)) {
+    return value;
+  }
 
-    if (str.empty(originalValue.trim())) {
-        return '';
-    }
+  if (str.empty(originalValue.trim())) {
+    return "";
+  }
 
-    return originalValue;
+  return originalValue;
 }
 
 /**
@@ -44,12 +44,12 @@ function transformSchemaToAllowEmptyString(value, originalValue) {
  *
  * @return {npmYup.NumberSchema<number | undefined, object>} Схема валидации чисел
  */
-const YupCustomNumberSchema = function(): npmYup.NumberSchema {
-    return new npmYup.NumberSchema<number | undefined, object>()
-        .transform(transformSchemaToAllowEmptyString)
-        .max(MAX_NUMBER_SQL_LIMIT)
-        .min(MIN_NUMBER_SQL_LIMIT);
-        // .nullable(undefined);
+const YupCustomNumberSchema = function (): npmYup.NumberSchema {
+  return new npmYup.NumberSchema<number | undefined, object>()
+    .transform(transformSchemaToAllowEmptyString)
+    .max(MAX_NUMBER_SQL_LIMIT)
+    .min(MIN_NUMBER_SQL_LIMIT);
+  // .nullable(undefined);
 };
 
 /**
@@ -57,10 +57,11 @@ const YupCustomNumberSchema = function(): npmYup.NumberSchema {
  *
  * @return {npmYup.DateSchema<Date | undefined, object>} Схема валидации даты
  */
-const YupCustomDateSchema = function(): npmYup.DateSchema {
-    return new npmYup.DateSchema<Date | undefined, object>()
-        .transform(transformSchemaToAllowEmptyString);
-        // .nullable(undefined);
+const YupCustomDateSchema = function (): npmYup.DateSchema {
+  return new npmYup.DateSchema<Date | undefined, object>().transform(
+    transformSchemaToAllowEmptyString
+  );
+  // .nullable(undefined);
 };
 
 /**
@@ -69,7 +70,7 @@ const YupCustomDateSchema = function(): npmYup.DateSchema {
  * @type {object}
  */
 export const yup = {
-    ...npmYup,
-    number: YupCustomNumberSchema,
-    date: YupCustomDateSchema,
-}
+  ...npmYup,
+  number: YupCustomNumberSchema,
+  date: YupCustomDateSchema,
+};

@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "test:coverage": "vitest --coverage",
     "lint:scripts": "eslint . --ext .ts",
-    "format:scripts": "prettier package tests --write"
+    "format:scripts": "prettier packages enums hooks components types tests --write"
   },
   "author": "Eduard Kangash",
   "license": "ISC",

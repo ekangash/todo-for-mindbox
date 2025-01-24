@@ -1,6 +1,6 @@
 export enum TaskStatus {
   ACTIVE,
-  COMPLETED
+  COMPLETED,
 }
 
 export type TaskUuid = string;

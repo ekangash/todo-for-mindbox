@@ -5,7 +5,7 @@ import { toJS } from "mobx";
 
 /** 2 App - Components, Hooks */
 /** 3 Entities, Stores, Packages, Enums ... */
-import {Task, TaskUuid, TaskStatus} from "@/types/task.d";
+import { Task, TaskUuid, TaskStatus } from "@/types/task.d";
 
 /**
  * @class Tasks
@@ -25,7 +25,7 @@ export class Tasks {
       changeVisibleActiveStatus: action,
       updateByUuid: action,
       deleteByUuid: action,
-      visibleByStatus: computed
+      visibleByStatus: computed,
     });
   }
 
@@ -70,7 +70,7 @@ export class Tasks {
     this.tasks.push({
       uuid: nanoid(16),
       title: title,
-      status: TaskStatus.ACTIVE
+      status: TaskStatus.ACTIVE,
     });
 
     return this;
@@ -89,7 +89,7 @@ export class Tasks {
       const task = this.tasks[taskInx];
 
       if (task.uuid === uuid) {
-        this.tasks[taskInx] = {...task, ...taskProps};
+        this.tasks[taskInx] = { ...task, ...taskProps };
       }
     }
 
@@ -115,14 +115,13 @@ export class Tasks {
     return this;
   }
 
-
   /**
    * Отправляет задачи в локальное хранилище.
    *
    * @return {this}
    */
   sendToLocalStorage(): this {
-    localStorage.setItem('tasks', JSON.stringify(toJS(this.tasks)));
+    localStorage.setItem("tasks", JSON.stringify(toJS(this.tasks)));
 
     return this;
   }
@@ -133,7 +132,7 @@ export class Tasks {
    * @return {this}
    */
   fetchFromLocalStorage(): this {
-    this.tasks = JSON.parse(localStorage.getItem('tasks') || "[]") as Task[];
+    this.tasks = JSON.parse(localStorage.getItem("tasks") || "[]") as Task[];
 
     return this;
   }

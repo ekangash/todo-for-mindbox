@@ -1,7 +1,7 @@
 /** 1 Node - Modules, Components, Hooks, Icons */
-import React from 'react';
-import {yup} from "@/packages/yup";
-import {ObjectSchema} from "yup";
+import React from "react";
+import { yup } from "@/packages/yup";
+import { ObjectSchema } from "yup";
 
 /** 2 App - Components, Hooks */
 /** 3 Entities, Stores, Packages, Enums ... */
@@ -10,16 +10,16 @@ import {ObjectSchema} from "yup";
  * @interface FormContext
  */
 export interface FormContext {
-    schema: ObjectSchema<any>;
-    disabled: string[];
+  schema: ObjectSchema<any>;
+  disabled: string[];
 }
 
 /**
  * @return {React.ReactElement} Сформированный DOM узел.
  */
 const HookFormContext = React.createContext<FormContext>({
-    schema: yup.object({}),
-    disabled: [],
+  schema: yup.object({}),
+  disabled: [],
 });
 
 /**
@@ -31,7 +31,7 @@ export const useFormContext = (): FormContext => React.useContext(HookFormContex
  * @interface FormProviderProps
  */
 interface FormProviderProps extends FormContext {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 /**
@@ -41,14 +41,8 @@ interface FormProviderProps extends FormContext {
  *
  * @return {React.ReactElement} Сформированный DOM узел.
  */
-export const FormProvider: React.FC<FormProviderProps> = ({
-    schema,
-    disabled,
-    children
-}) => {
-    return (
-        <HookFormContext.Provider value={{ schema, disabled }}>
-            {children}
-        </HookFormContext.Provider>
-    );
+export const FormProvider: React.FC<FormProviderProps> = ({ schema, disabled, children }) => {
+  return (
+    <HookFormContext.Provider value={{ schema, disabled }}>{children}</HookFormContext.Provider>
+  );
 };
