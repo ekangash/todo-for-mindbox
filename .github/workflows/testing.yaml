@@ -23,7 +23,7 @@ jobs:
       - name: Build the Docker image
         run: docker compose up -d --build
       - name: Install Dependencies
-        run: docker compose exec dev-client npm install
+        run: docker compose exec -u root dev-client npm install
       - name: Execute eslint scripts
         run: docker compose exec dev-client npm run lint:scripts
       - name: Execute eslint react components
