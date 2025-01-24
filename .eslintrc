@@ -17,6 +17,9 @@
   },
   "rules": {
     "prettier/prettier": "error",
-    "prefer-const": "warn"
+    "prefer-const": "warn",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-require-imports": "off"
   }
 }

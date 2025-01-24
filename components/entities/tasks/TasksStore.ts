@@ -67,7 +67,7 @@ export class Tasks {
    * @return {this}
    */
   createActiveTask(title: string): this {
-    this.tasks.push({
+    this.tasks.unshift({
       uuid: nanoid(16),
       title: title,
       status: TaskStatus.ACTIVE,
@@ -85,7 +85,7 @@ export class Tasks {
    * @return {this}
    */
   updateByUuid(uuid: TaskUuid, taskProps: Partial<Task>): this {
-    for (let taskInx of this.tasks.keys()) {
+    for (const taskInx of this.tasks.keys()) {
       const task = this.tasks[taskInx];
 
       if (task.uuid === uuid) {
@@ -104,7 +104,7 @@ export class Tasks {
    * @return {this}
    */
   deleteByUuid(uuid: TaskUuid): this {
-    for (let taskInx of this.tasks.keys()) {
+    for (const taskInx of this.tasks.keys()) {
       const task: Task = this.tasks[taskInx];
 
       if (task.uuid === uuid) {

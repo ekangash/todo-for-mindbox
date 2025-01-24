@@ -137,7 +137,7 @@ export class AppExceptionHandler {
    * @return {this} Экземпляр текущего объекта.
    */
   fillEvents(eventFns: object = {}): this {
-    for (let [eventName, eventFn] of Object.entries(eventFns)) {
+    for (const [eventName, eventFn] of Object.entries(eventFns)) {
       if (inst.isset(this, eventName)) {
         this[eventName] = eventFn;
       }

@@ -5,13 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "rimraf dist/ && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts && copyfiles ./package.json dist",
+    "build": "rimraf dist/ && eslint . --ext .ts && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts && copyfiles ./package.json dist",
     "dts": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
     "test": "vitest",
     "lint": "eslint .",
     "test:coverage": "vitest --coverage",
     "lint:scripts": "eslint . --ext .ts",
-    "format:scripts": "prettier packages enums hooks components types tests --write"
+    "format:scripts": "prettier packages enums hooks components types vite.config.ts tailwind.config.ts tests --write"
   },
   "author": "Eduard Kangash",
   "license": "ISC",
