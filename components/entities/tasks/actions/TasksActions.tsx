@@ -10,13 +10,18 @@ import { TasksStore } from "@/components/entities/tasks/TasksStore";
 /** 3 Entities, Stores, Packages, Enums ... */
 import { TaskStatus } from "@/types/task.d";
 import { observer } from "mobx-react-lite";
+import {cn} from "@/packages/utils";
+
+interface TasksActionsProps {
+    className?: string;
+}
 
 /**
  * @return {React.ReactElement} Сформированный DOM узел.
  */
-export const TasksActions: React.FC = observer((): React.ReactElement => {
+export const TasksActions: React.FC<TasksActionsProps> = observer(({ className = '' }): React.ReactElement => {
   return (
-    <div className="sticy top-0 flex items-center justify-center space-x-1">
+    <div className={cn("top-16 sticky flex items-center justify-center space-x-1", className)}>
       <Button
         variant={TasksStore.visibleActiveStatus === undefined ? "secondary" : "ghost"}
         onClick={() => {

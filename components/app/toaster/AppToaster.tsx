@@ -14,6 +14,6 @@ export const AppToaster: React.FC = (): React.ReactElement => {
   const { theme } = useTheme();
 
   return (
-    <ToasterSonner position={"top-center"} theme={theme === "dark" ? "dark" : "light"} expand />
+    <ToasterSonner position={"bottom-center"} theme={theme === "dark" ? "dark" : "light"} expand />
   );
 };

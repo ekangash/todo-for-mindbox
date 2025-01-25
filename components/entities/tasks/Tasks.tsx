@@ -28,10 +28,10 @@ export const Tasks: React.FC = (): React.ReactElement => {
   }, []);
 
   return (
-    <div className="flex w-full flex-col justify-center space-y-4 p-6 bg-window rounded-3xl border border-solid border-border">
+    <div className="flex w-full flex-col justify-center p-6 bg-window rounded-3xl border border-solid border-border">
       <TasksCreate />
-      <div className="flex w-full flex-col justify-center space-y-4">
-        <TasksActions />
+      <div className="flex w-full flex-col justify-center">
+        <TasksActions className="bg-window py-4" />
         <Loader expect={initLoadTasks} filled>
           {() => <TasksGroup />}
         </Loader>
