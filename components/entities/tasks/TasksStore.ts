@@ -66,11 +66,11 @@ export class Tasks {
    *
    * @return {Task} Созданную задачу
    */
-  createTask(props: Pick<Task,'title'> & Partial<Omit<Task,'title'>>): Task {
+  createTask(props: Pick<Task, "title"> & Partial<Omit<Task, "title">>): Task {
     const newTask = {
       uuid: nanoid(16),
       status: TaskStatus.ACTIVE,
-      ...props
+      ...props,
     };
 
     this.tasks.unshift(newTask);
