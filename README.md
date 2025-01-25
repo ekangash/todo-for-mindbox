@@ -1,3 +1,5 @@
+Кодовая база размещена на Vercel: [https://todo-for-mindbox.vercel.app/](https://todo-for-mindbox.vercel.app/)
+
 # Развертывание проекта без docker
 Проект локально можно инициировать всего одной командой:
 
