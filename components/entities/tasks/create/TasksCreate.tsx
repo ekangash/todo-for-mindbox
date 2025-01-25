@@ -2,6 +2,7 @@
 import React from "react";
 import { toast } from "sonner";
 import { UseFormReturn } from "react-hook-form/dist/types";
+import { obj } from "data-support";
 
 /** 2 App - Components, Hooks */
 import { Button } from "@/components/shared/button/Button";
@@ -9,7 +10,6 @@ import { Form } from "@/components/shared/form/Form";
 
 /** 3 Entities, Stores, Packages, Enums ... */
 import { yup } from "@/packages/yup";
-import { obj } from "data-support";
 import { yupSupport } from "@/packages/yup/support";
 import { TasksStore } from "@/components/entities/tasks/TasksStore";
 
@@ -28,7 +28,8 @@ export const TasksCreate: React.FC = (): React.ReactElement => {
   const pushTaskToList = (data: object, formMethods: UseFormReturn): void => {
     toast.promise(
       new Promise((resolve, reject) => {
-        TasksStore.createActiveTask(obj.get(data, "title")).sendToLocalStorage();
+        TasksStore.createTask(obj.only(data, ["title"]));
+        TasksStore.sendToLocalStorage();
         formMethods.reset();
 
         setTimeout(() => {

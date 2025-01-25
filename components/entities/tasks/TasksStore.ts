@@ -21,7 +21,7 @@ export class Tasks {
     makeObservable(this, {
       tasks: observable,
       visibleActiveStatus: observable,
-      createActiveTask: action,
+      createTask: action,
       changeVisibleActiveStatus: action,
       updateByUuid: action,
       deleteByUuid: action,
@@ -62,18 +62,20 @@ export class Tasks {
   /**
    * Формирует новую задачу
    *
-   * @param {string} title Заголовок новой задачи
+   * @param {Pick<Task,'title'> & Partial<Omit<Task,'title'>>} props Заголовок новой задачи
    *
-   * @return {this}
+   * @return {Task} Созданную задачу
    */
-  createActiveTask(title: string): this {
-    this.tasks.unshift({
+  createTask(props: Pick<Task,'title'> & Partial<Omit<Task,'title'>>): Task {
+    const newTask = {
       uuid: nanoid(16),
-      title: title,
       status: TaskStatus.ACTIVE,
-    });
+      ...props
+    };
 
-    return this;
+    this.tasks.unshift(newTask);
+
+    return newTask;
   }
 
   /**
